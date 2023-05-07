@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <string.h>
 using namespace std;
 void Heap();
@@ -59,4 +59,4 @@ void Heap()
 	cout << "My int ptr is: " << *i << endl;
 	delete i;
 	i = nullptr;
-};
+};*/
