@@ -9,8 +9,13 @@ class Character
 	private:
 	string name;
 };
+Character::Character()
+{
+	cout<<"A new character has born!"<<endl;
+};
 int main(void)
 {
+	Character * myCharacter = new Character();
 	Heap();
 	int* k = new int(5);
 	cout << "My int k ptr is: " << *k << endl;
