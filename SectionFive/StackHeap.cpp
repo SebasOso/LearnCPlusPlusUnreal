@@ -2,6 +2,13 @@
 #include <string.h>
 using namespace std;
 void Heap();
+class Character
+{
+	public:
+	Character();
+	private:
+	string name;
+};
 int main(void)
 {
 	Heap();
