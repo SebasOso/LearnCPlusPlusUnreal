@@ -39,7 +39,7 @@ Character::Character()
 int main(void)
 {
 	Character * myCharacter = new Character();
-	myCharacter->SetName("Sebas");
+	myCharacter->SetName("Sebastian");
 	myCharacter->PrintCharacter();
 	Heap();
 	int* k = new int(5);
