@@ -1,24 +1,34 @@
 #include <iostream>
 using namespace std;
-int Avarage(int num);
+int Average(int num);
+float Sum(float num);
 int main (void)
 {
-    Avarage(5);
-    Avarage(4);
-    Avarage(3);
-    cout<<"Avarage is: "<<Avarage(0)<<endl;
+    Average(5);
+    Average(4);
+    Average(3);
+    cout<<"Average is: "<<Average(0)<<endl;
+    Sum(45.1f);
+    Sum(78.12f);
+    cout<<"Sum total is: "<<Sum(0)<<endl;
     return 0;
 }
-int Avarage(int num)
+int Average(int num)
 {
     static int count = 0;
     count++;
     static int sum = 0;
     sum+=num;
-    static int avarage = 0;
+    static int average = 0;
     if(count > 0)
     {
-        avarage = sum/count;
+        average = sum/count;
     }
-    return avarage ;
+    return average ;
+}
+float Sum(float num)
+{
+    static float total;
+    total += num;
+    return total;
 }
