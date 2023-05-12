@@ -6,20 +6,13 @@ class Dog
 {
     public:
     static int count; 
-    int Count();
-    Dog();
-    private:
-    int paws;
+    static void AddCount();
 };
-Dog::Dog()
+void Dog::AddCount()
 {
     count++;
 }
 int Dog::count = 0;
-int Dog::Count()
-{
-    return count;
-}
 int main (void)
 {
     int a = 0;
@@ -34,9 +27,8 @@ int main (void)
     cout<<"Sum total is: "<< b <<endl;
     for (size_t i = 0; i < 5; i++)
     {
-        Dog *dog = new Dog();
-        cout<<"Dog count: "<<dog->Count()<<endl;
-        delete dog;
+        Dog::AddCount();
+        cout<<"Dog count: "<<Dog::count<<endl;
     }
     return 0;
 }
