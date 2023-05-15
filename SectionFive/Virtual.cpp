@@ -1,43 +1,36 @@
 #include <string.h>
 #include <iostream>
 using namespace std;
-class Person
+class Object
+{   
+    public:
+    virtual void BeginPlay();
+};
+class Actor : public Object
 {
     public:
-    virtual void SayHello();
+    virtual void BeginPlay() override;
 };
-void Person::SayHello()
-{
-    cout<<"Hello"<<endl;
-}
-class French:public Person
+class Pawn : public Actor
 {
     public:
-    void SayHello();
+    virtual void BeginPlay() override;
 };
-void French::SayHello()
+void Pawn::BeginPlay()
 {
-    cout<<"Bonjour"<<endl;
+    cout<<"Pawn BeginPlay() called."<<endl;
+    Object::BeginPlay();
 }
-class FrenchSouth:public French
+void Actor::BeginPlay()
 {
-    public:
-    virtual void SayHello() override;
+    cout<<"Actor BeginPlay() called."<<endl;
 };
-void FrenchSouth::SayHello()
+void Object::BeginPlay()
 {
-    cout<<"BonjourSouth"<<endl;
-}
+    cout<<"Object BeginPlay() called."<<endl;
+};
 int main (void)
 {
-    Person *person = new Person();
-    person->SayHello();
-    French *frenchMan = new French();
-    frenchMan->SayHello();
-    FrenchSouth *frenchSouthMan = new FrenchSouth();
-    frenchSouthMan->SayHello();
-    delete person;
-    delete frenchMan;
-    delete frenchSouthMan;
-    return 0;
+    Object *myObjectPtr = new Pawn();
+    myObjectPtr->BeginPlay();
 }
