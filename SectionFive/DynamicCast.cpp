@@ -50,18 +50,27 @@ int main(void)
     for (size_t i = 0; i < 3; i++)
     {
        //AnimalArray[i]->Noise();
-       Animal *animal  = AnimalArray[i];
-        Wolf *wolf = dynamic_cast<Wolf*>(animal);
-       if(wolf)
-       {
-            wolf->WolfFunction();
-       }
-       Dog *dog = dynamic_cast<Dog*>(animal);
-       if(dog)
-       {
+        Animal *animal  = AnimalArray[i];
+        /*Dog *dog = static_cast<Dog*>(animal);
+        if(dog)
+        {
             dog->DogFunction();
-       }
-
+        }
+        Wolf *wolf = static_cast<Wolf*>(animal);
+        if(wolf)
+        {
+            wolf->WolfFunction();
+        }*/
+        Dog *dog = dynamic_cast<Dog*>(animal);
+        if(dog)
+        {
+            dog->DogFunction();
+        }
+        Wolf *wolf = dynamic_cast<Wolf*>(animal);
+        if(wolf)
+        {
+            wolf->WolfFunction();
+        }
     }
     delete myDog;
     delete myWolf;
