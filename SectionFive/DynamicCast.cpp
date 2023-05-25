@@ -1,42 +1,10 @@
 #include <iostream>
 #include <string.h>
+#include "Animal.h"
+#include "Dog.h"
+#include "Wolf.h"
 using namespace std;
-//________________________________
-//Class Animal
-class Animal
-{
-    public:
-    virtual void Noise();
-
-    void AnimalFunction()
-    {
-        cout<<"Animal function called.\n"<<endl;
-    }
-};
-//_________________________________
-//Class Dog From Animal
-class Dog:public Animal
-{
-    public:
-    virtual void Noise() override; 
-    void DogFunction()
-    {
-        cout<<"Dog function called.\n"<<endl;
-    }
-};
-//_________________________________
-//Class Wolf From Animal
-class Wolf:public Dog
-{
-    public:
-    virtual void Noise() override;
-    void WolfFunction()
-    {
-        cout<<"Wolf function called.\n"<<endl;
-    }
-};
-//_________________________________
-int main(void)
+void InheritanceFunction()
 {
     Animal *myAnimal = new Animal();
     Dog *myDog = new Dog();
@@ -72,20 +40,9 @@ int main(void)
             wolf->WolfFunction();
         }
     }
-    delete myDog;
-    delete myWolf;
-    delete myAnimal;
+}
+int main(void)
+{
+    InheritanceFunction();
     return 0;
 }
-void Animal::Noise()
-{
-    cout<<"Animal Noise() called."<<endl;
-}
-void Wolf::Noise()
-{
-    cout<<"Hawwwwwwwwwwwwwwwww!"<<endl;
-};
-void Dog::Noise()
-{
-    cout<<"Woof woof!"<<endl;
-};

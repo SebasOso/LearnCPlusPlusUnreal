@@ -3,6 +3,7 @@
         "Sebas"
     ],
     "files.associations": {
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
